@@ -34,7 +34,7 @@ export const postJob = catchAsyncError(async (req, res, next) => {
   } = req.body;
 
   if (!title || !description || !category || !country || !city || !location) {
-    return next(new ErrorHandler('Please provide all job deatails', 400));
+    return next(new ErrorHandler('Please provide all job details', 400));
   }
 
   if ((!salaryFrom || !salaryUpto) && !fixedSalary) {

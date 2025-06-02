@@ -36,7 +36,9 @@ const PostJob = () => {
     : {title, category, country, city, location, salaryFrom, salaryUpto, description}, {withCredentials : true,
     headers : {
       "Content-Type" : 'application/json'
-    }}).then((res) => toast.success(res.data.message))
+    }},
+    navigateTo('/job/me')
+  ).then((res) => toast.success(res.data.message))
     .catch((error) => toast.error(error.response.data.message));
   };
   if(!isAuthorized || user && user.role !== "Employer"){

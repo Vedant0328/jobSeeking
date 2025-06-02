@@ -1,7 +1,7 @@
 import React, {useEffect, useContext} from 'react'
 import './App.css';
 import {Context} from './main';
-import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Login from './components/Auth/Login';
 import Register from './components/Auth/Register';
 import Navbar from './components/Layout/Navbar';

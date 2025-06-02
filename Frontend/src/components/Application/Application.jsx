@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import {Context} from "../../main";
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
@@ -20,6 +20,8 @@ const Application = () => {
     const resume = e.target.files[0];
     setResume(resume);
   };
+
+  
 
   const {id} = useParams();
   const handleApplication = async(e) =>{
@@ -47,7 +49,7 @@ const Application = () => {
       setAddress("");
       setResume("");
       toast.success(data.message);
-      navigateTo('/job/getall');
+      navigateTo("/application/me");
     } catch (error) {
         toast.error(error.response.data.message);
     }
